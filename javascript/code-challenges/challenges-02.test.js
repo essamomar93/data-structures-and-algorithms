@@ -12,7 +12,7 @@ const raisedToTheThird = (arr) => {
   // Solution code here...
   let newArr = [];
   arr.forEach(element => {
-    let increment = Math.pow(element, 3)
+    let increment = Math.pow(element, 3);
     newArr.push(increment);
 
   });
@@ -29,10 +29,10 @@ const addOne = (arr) => {
   // Solution code here...
   let newArr = [];
   arr.map(element => {
-    let increment = element + 1
+    let increment = element + 1;
     newArr.push(increment);
   });
-  return newArr
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,10 +45,10 @@ const addQuestion = (arr) => {
   // Solution code here...
   let newArr = [];
   arr.map(element => {
-    let increment = element + '?'
+    let increment = element + '?';
     newArr.push(increment);
   });
-  return newArr
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,9 +65,9 @@ const forLoopTwoToThe = (arr) => {
   // Solution code here...
   let newArr = [];
   for (let i = 0; i < arr.length; i++) {
-    newArr.push(Math.pow(2,arr[i]));
+    newArr.push(Math.pow(2, arr[i]));
   }
-return newArr;
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -79,11 +79,10 @@ Write a function named forEachTwoToThe that produces the same output as your for
 const forEachTwoToThe = (arr) => {
   // Solution code here...
   let newArr = [];
-  arr.forEach(element=> 
-    {
-    newArr.push(Math.pow(2,element));
-  })
-return newArr;
+  arr.forEach(element => {
+    newArr.push(Math.pow(2, element));
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -94,11 +93,11 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
-  let newArr= 
-  arr.map((element)=>{
-    return Math.pow(2,element)
-  }) 
-  return newArr
+  let newArr =
+    arr.map((element) => {
+      return Math.pow(2, element);
+    });
+  return newArr;
 
 };
 

@@ -14,7 +14,7 @@ const screenForNames = (arr) => {
   // Solution code here...
   let r_gex = /^([MD]r|[MD]rs|Ms).\s[A-Z]\w*/g;
   let nArr = arr.filter((item) => {
-    if (r_gex .test(item)) {
+    if (r_gex.test(item)) {
       return item;
     }
   });
@@ -32,8 +32,8 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 const toTitleCase = (arr) => {
   // Solution code here...
   return arr.map
-  (str => str.replace
-    (str.charAt(0), str.charAt(0).toUpperCase()));
+    (str => str.replace
+      (str.charAt(0), str.charAt(0).toUpperCase()));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -185,7 +185,7 @@ Here is a sample board:
 
 const detectTicTacToeWin = (board) => {
   // Solution code here...
-  
+
 };
 
 /* ------------------------------------------------------------------------------------------------
