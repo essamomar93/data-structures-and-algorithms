@@ -1,11 +1,13 @@
 # Singly Linked List
-<!-- Short summary or background information -->
+-  a type of linked list that is unidirectional, that is, it can be traversed in only one direction from head to the last node .
 
 ## Challenge
-<!-- Description of the challenge -->
+- it take some time to understand the proses and i think i  need more practis 
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+- BigO(1)
 
 ## API
-<!-- Description of each method publicly available to your Linked List -->
+- insert() :This method inserts content before, after, at the top of, or at the bottom of element, as specified by the position property of the second argument. 
+- includes() : determines whether a string contains the given characters within it or not. 
+- toString() :  method in Javascript is used with a number and converts the number to a string. 
