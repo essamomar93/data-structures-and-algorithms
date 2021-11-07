@@ -26,3 +26,4 @@ To run your tests
 | 2-| [array-insert-shift](javascript/401-code-challenges/array-insert-shift)|
 | 3-| [array-binary-search](javascript/401-code-challenges/array-binary-search)|
 | 4-| [linked-list](javascript/401-code-challenges/linked-list)|
+
