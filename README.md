@@ -25,4 +25,8 @@ To run your tests
 | 1-| [array-reverse](javascript/401-code-challenges/array-reverse)|
 | 2-| [array-insert-shift](javascript/401-code-challenges/array-insert-shift)|
 | 3-| [array-binary-search](javascript/401-code-challenges/array-binary-search)|
-
+| 4-| [linked-list](javascript/401-code-challenges/linked-list)|
+| 5-| [linked-list-insertions](javascript/401-code-challenges/linked-list-insertions)|
+| 6-| [linked-list-kth](javascript/401-code-challenges/linked-list-kth)|
+| 7-| [linked-list-zip](javascript/401-code-challenges/linked-list-zip)|
+| 8-| [stack-and-queue](javascript/401-code-challenges/stack-and-queue)|
