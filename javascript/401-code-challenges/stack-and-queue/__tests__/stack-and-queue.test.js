@@ -2,7 +2,7 @@
 const Queue = require("../lib/queue");
 const Stack = require("../lib/stack");
 
-describe(' Node & Stack & Queue its', () => {
+describe('Stacks and Queues', () => {
 
 
   it('Can successfully push onto a stack', () => {
