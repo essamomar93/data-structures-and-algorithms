@@ -25,7 +25,7 @@ class LinkedList {
 
     return this;
   }
-  
+
   includes(value) {
     let currentNode = this.head;
     while (currentNode.value !== value) {
@@ -52,4 +52,4 @@ class LinkedList {
 }
 
 
-module.exports=LinkedList;
+module.exports = LinkedList;
