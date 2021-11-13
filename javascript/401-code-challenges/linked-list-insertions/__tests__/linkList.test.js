@@ -3,7 +3,7 @@
 const LinkedList = require('../lib/linked-list');
 
 describe('linked-list test', () => {
-  it("Can successfully instantiate an empty linked list", () => {
+  it("Can successfully add a node to the end of the linked list", () => {
     const linkList = new LinkedList();
     expect(linkList).toBeDefined();
     expect(linkList.head).toBeNull();
@@ -59,4 +59,4 @@ describe('linked-list test', () => {
     expect(ll.toString().length).toBeGreaterThan(0);
     expect(ll.toString()).toEqual("{ a } -> { b } -> { c } -> X");
   });
-})
+});
