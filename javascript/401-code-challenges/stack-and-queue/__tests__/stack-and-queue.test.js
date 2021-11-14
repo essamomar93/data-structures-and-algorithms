@@ -4,7 +4,6 @@ const Stack = require("../lib/stack");
 
 describe('Stacks and Queues', () => {
 
-
   it('Can successfully push onto a stack', () => {
     let stack = new Stack();
     stack.push(1);
