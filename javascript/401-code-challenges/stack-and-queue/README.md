@@ -2,8 +2,6 @@
 - Stacks: it is a container of objects that are inserted and removed according to the last-in first-out (LIFO) principle. 
 - Queues: it is a container of objects (a linear collection) that are inserted and removed according to the first-in first-out (FIFO) principle.
 
-## Challenge
+## pseudo_queue: 
 
-## Approach & Efficiency
-
-## API
+![pseudo_queue](code-11.png)
