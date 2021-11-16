@@ -1,4 +1,3 @@
-"use strict";
 
 const Node = require("./Node");
 
@@ -10,46 +9,57 @@ class LinkedList {
 
   insert(value) {
     const newNode = new Node(value);
-
-    if (!this.head) {
+    if (this.head) {
+      newNode.next = this.head;
       this.head = newNode;
-      return this;
+    } else {
+      this.head = newNode;
     }
-
+  }
+  append(value) {
+    const node = new Node(value);
+    if (!this.head) {
+      this.head = node;
+    } else {
+      let currentValue = this.head;
+      while (currentValue.next) {
+        currentValue = currentValue.next;
+      }
+      currentValue.next = node;
+    }
+  }
+  insertBefore(old, neu) {
     let currentNode = this.head;
-    while (currentNode.next) {
-      currentNode = currentNode.next;
+    if (currentNode.value === old) {
+      return this.insert(neu);
+    } else {
+      let nextNode;
+      while (currentNode.value !== old) {
+        currentNode = currentNode.next;
+        nextNode = currentNode.next;
+      }
+      const node = new Node(old);
+      currentNode.value = neu;
+      currentNode.next = node;
+      node.next = nextNode;
     }
-
-    currentNode.next = newNode;
-
     return this;
   }
-  
-  includes(value) {
+  insertAfter(old, neu) {
     let currentNode = this.head;
-    while (currentNode.value !== value) {
+    let nextNode;
+    while (currentNode.value !== old) {
       currentNode = currentNode.next;
-      if (currentNode === null) {
-        return false;
-      }
+      nextNode = currentNode.next;
     }
-    return true;
-  }
-
-  toString() {
-    let currentNode = this.head;
-    let string = "";
-    while (currentNode) {
-      string += `{ ${currentNode.value} } -> `;
-      currentNode = currentNode.next;
-      if (!currentNode) {
-        string += "X";
-      }
+    if (currentNode.next === null) {
+      return this.append(neu);
+    } else {
+      let newNode = new Node(neu);
+      currentNode.next = newNode;
+      newNode.next = nextNode;
     }
-    return string;
   }
 }
 
-
-module.exports=LinkedList;
+module.exports = LinkedList;
