@@ -28,7 +28,9 @@ class LinkedList {
       currentValue.next = node;
     }
   }
+
   insertBefore(old, neu) {
+
     let currentNode = this.head;
     if (currentNode.value === old) {
       return this.insert(neu);
@@ -61,5 +63,4 @@ class LinkedList {
     }
   }
 }
-
 module.exports = LinkedList;
