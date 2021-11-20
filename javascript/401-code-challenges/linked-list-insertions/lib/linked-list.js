@@ -10,22 +10,17 @@ class LinkedList {
 
   insert(value) {
     const newNode = new Node(value);
-
     if (!this.head) {
       this.head = newNode;
       return this;
     }
-
     let currentNode = this.head;
     while (currentNode.next) {
       currentNode = currentNode.next;
     }
-
     currentNode.next = newNode;
-
     return this;
   }
-  
   includes(value) {
     let currentNode = this.head;
     while (currentNode.value !== value) {
@@ -36,7 +31,6 @@ class LinkedList {
     }
     return true;
   }
-
   toString() {
     let currentNode = this.head;
     let string = "";
@@ -51,5 +45,4 @@ class LinkedList {
   }
 }
 
-
-module.exports=LinkedList;
+module.exports = LinkedList;
