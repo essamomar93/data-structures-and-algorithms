@@ -1,8 +1,11 @@
 {
-  "name": "linked-list",
+  "name": "trees",
   "version": "1.0.0",
-  "description": "<!-- Short summary or background information -->",
+  "description": "",
   "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "test": "jest",
     "start": "node index.js",
