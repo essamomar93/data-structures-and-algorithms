@@ -2,61 +2,69 @@
 
 const LinkedList = require('../lib/linked-list');
 
-describe('linked-list test', () => {
-  it("Can successfully instantiate an empty linked list", () => {
-    const linkList = new LinkedList();
-    expect(linkList).toBeDefined();
-    expect(linkList.head).toBeNull();
+
+describe('linked-list-insertions test', () => {
+
+  it("Can successfully add a node to the end of the linked list", () => {
+    const ll = new LinkedList();
+    ll.append("1");
+    ll.append("2");
+    ll.append("3");
+    ll.append("4");
+    expect(ll.head.value).toEqual("1");
+    expect(ll.head.next.next.next.value).toEqual("4");
   });
 
-  it("Can properly insert into the linked list", () => {
+  it("Can successfully add multiple nodes to the end of a linked list", () => {
     const ll = new LinkedList();
-    ll.insert("a");
-    expect(ll.head.value).toEqual("a");
-    expect(ll.head.next).toBeNull();
-  });
-
-  it("The head property will properly point to the first node in the linked list", () => {
-    const ll = new LinkedList();
-    ll.insert("a");
-    ll.insert("b");
-    expect(ll.head.value).toEqual("a");
-    expect(ll.head.next.value).toEqual("b");
-  });
-
-  it("Can properly insert multiple nodes into the linked list", () => {
-    const ll = new LinkedList();
-    ll.insert("c");
-    ll.insert("b");
-    ll.insert("a");
+    ll.append("1");
+    ll.append("2");
+    ll.append("3");
     expect(ll.head.value).toBeDefined();
     expect(ll.head.next.value).toBeDefined();
     expect(ll.head.next.next.value).toBeDefined();
   });
 
-  it("Will return true when finding a value within the linked list that exists", () => {
+  it("Can successfully insert a node before a node located in the middle of a linked list", () => {
     const ll = new LinkedList();
-    ll.insert("c");
-    ll.insert("b");
-    ll.insert("a");
-    expect(ll.includes("a")).toBeTruthy();
-    expect(ll.includes("b")).toBeTruthy();
-    expect(ll.includes("c")).toBeTruthy();
+    ll.append("1");
+    ll.append("2");
+    ll.append("3");
+    ll.insertBefore("2", "4");
+    expect(ll.head.value).toEqual("1");
+    expect(ll.head.next.value).toEqual("4");
+    expect(ll.head.next.next.value).toEqual("2");
+    expect(ll.head.next.next.next.value).toEqual("3");
   });
 
-  it("Will return false when searching for a value in the linked list that does not exist", () => {
+  it("Can successfully insert a node before the first node of a linked list", () => {
     const ll = new LinkedList();
-    ll.insert("a");
-    expect(ll.includes("b")).toBeFalsy();
+    ll.append("1");
+    ll.append("2");
+    ll.insertBefore("1", "4");
+    expect(ll.head.value).toEqual("4");
+    expect(ll.head.next.value).toEqual("1");
+    expect(ll.head.next.next.next).toEqual(null);
   });
 
-  it("Can properly return a collection of all the values that exist in the linked list", () => {
+  it("Can successfully insert after a node in the middle of the linked list", () => {
     const ll = new LinkedList();
-    ll.insert("a");
-    ll.insert("b");
-    ll.insert("c");
-    expect(ll.toString()).toBeDefined();
-    expect(ll.toString().length).toBeGreaterThan(0);
-    expect(ll.toString()).toEqual("{ a } -> { b } -> { c } -> X");
+    ll.append("1");
+    ll.append("2");
+    ll.append("3");
+    ll.insertAfter("2", "4");
+    expect(ll.head.next.value).toEqual("2");
+    expect(ll.head.next.next.value).toEqual("4");
+    expect(ll.head.next.next.next.value).toEqual("3");
   });
-})
+
+  it("Can successfully insert a node after the last node of the linked list", () => {
+    const ll = new LinkedList();
+    ll.append("1");
+    ll.append("2");
+    ll.insertAfter("2", "4");
+    expect(ll.head.next.value).toEqual("2");
+    expect(ll.head.next.next.value).toEqual("4");
+    expect(ll.head.next.next.next).toEqual(null);
+  });
+});
