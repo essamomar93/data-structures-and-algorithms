@@ -5,9 +5,10 @@ class AnimalShelter {
     enqueue(animal) {
         if (animal.type === 'Cat') {
             this.newCat.enqueue(animal);
-        }
-        if (animal.type === 'Dog') {
+        } else if (animal.type === 'Dog') {
             this.newDog.enqueue(animal);
+        } else { 
+            return null ;
         }
     }
     dequeue(pref) {
