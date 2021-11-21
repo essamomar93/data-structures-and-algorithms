@@ -39,14 +39,16 @@ class BinaryTree {
     _walk(this.root);
     return arrayOfReadNodes;
   }
-
   maximumValue() {
-    let max = this.root;
-    while (max.right) {
-      max = max.right;
-    }
-    return max.value;
+    let max = this.root.value;
+    const traverse = (node) => {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      max = node.value > max ? node.value : max;
+    };
+    traverse(this.root);
 
+    return max;
   }
 
 }
