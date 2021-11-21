@@ -28,10 +28,10 @@ describe('Trees test', () => {
   });
 
   it('Can successfully return a collection from a preorder traversal', () => {
-    bTree.root.left= new Node(6);
-    bTree.root.right = new Node(7);
-    bTree.root.left= new Node(10);
-    bTree.root.right = new Node(12);
+    bTree.root.left.left= new Node(6);
+    bTree.root.left.right = new Node(7);
+    bTree.root.right.left= new Node(10);
+    bTree.root.right.right = new Node(12);
     expect(bTree.preOrder()).toEqual([1, 4, 6, 7, 5,10,12]);
 
   });
@@ -42,6 +42,12 @@ describe('Trees test', () => {
 
   it('Can successfully return a collection from a postorder traversal', () => {
     expect(bTree.postOrder()).toEqual([6, 7, 4, 10, 12, 5, 1]);
+  });
+
+  it('Can successfully return a collection from a maximum value', () => {
+    expect(bTree.maximumValue()).toEqual(12);
+    expect(bTree.maximumValue()).toEqual(12);
+    expect(bTree.maximumValue()).toEqual(12);
   });
 
 });

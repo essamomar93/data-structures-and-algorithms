@@ -10,8 +10,8 @@ class BinaryTree {
     let arrayOfReadNodes = [];
     const _walk = (node) => {
       arrayOfReadNodes.push(node.value);
-      if (node.left) { _walk(node.left) }
-      if (node.right) { _walk(node.right) }
+      if (node.left) { _walk(node.left); }
+      if (node.right) { _walk(node.right); }
     };
 
     _walk(this.root);
@@ -21,9 +21,9 @@ class BinaryTree {
     let arrayOfReadNodes = [];
 
     const _walk = (node) => {
-      if (node.left) { _walk(node.left) }
+      if (node.left) { _walk(node.left); }
       arrayOfReadNodes.push(node.value);
-      if (node.right) { _walk(node.right) }
+      if (node.right) { _walk(node.right); }
     };
     _walk(this.root);
     return arrayOfReadNodes;
@@ -31,13 +31,23 @@ class BinaryTree {
   postOrder() {
     let arrayOfReadNodes = [];
     const _walk = (node) => {
-      if (node.left) { _walk(node.left) }
-      if (node.right) { _walk(node.right) }
+      if (node.left) { _walk(node.left); }
+      if (node.right) { _walk(node.right); }
       arrayOfReadNodes.push(node.value);
     };
 
     _walk(this.root);
     return arrayOfReadNodes;
   }
+
+  maximumValue() {
+    let max = this.root;
+    while (max.right) {
+      max = max.right;
+    }
+    return max.value;
+
+  }
+
 }
 module.exports = BinaryTree;
