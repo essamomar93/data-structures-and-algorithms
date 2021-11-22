@@ -49,5 +49,8 @@ describe('Trees test', () => {
     expect(bTree.maximumValue()).toEqual(12);
     expect(bTree.maximumValue()).toEqual(12);
   });
+  it('Can successfully return a collection from tree Breadth First', () => {
+    expect(bTree.treeBreadthFirst()).toEqual([1, 4, 5, 6, 7, 10, 12]);
+  });
 
 });
