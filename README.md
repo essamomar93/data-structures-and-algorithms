@@ -31,3 +31,5 @@ To run your tests
 | 7-| [linked-list-zip](javascript/401-code-challenges/linked-list-zip)|
 | 8-| [stack-and-queue](javascript/401-code-challenges/stack-and-queue)|
 | 9-| [trees](javascript/401-code-challenges/trees)|
+| 10-| [Sort](javascript/401-code-challenges/Sort)|
+
