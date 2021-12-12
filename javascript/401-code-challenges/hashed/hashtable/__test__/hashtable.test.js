@@ -38,3 +38,4 @@ describe('HashTable Works Super Fine', () => {
     expect(hashTable.includes('molen')).toEqual(true);
   });
 });
+
