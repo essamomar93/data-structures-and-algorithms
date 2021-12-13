@@ -32,4 +32,4 @@ To run your tests
 | 8-| [stack-and-queue](javascript/401-code-challenges/stack-and-queue)|
 | 9-| [trees](javascript/401-code-challenges/trees)|
 | 10-| [Sort](javascript/401-code-challenges/Sort)|
-
+| 11-| [hashed](javascript/401-code-challenges/hashed)|
