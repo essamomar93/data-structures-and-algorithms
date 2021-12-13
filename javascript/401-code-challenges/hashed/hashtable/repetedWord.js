@@ -15,7 +15,7 @@ function repeatedWord(string) {
   return null;
 }
 
-const test = repeatedWord('It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...')
+const test = repeatedWord('It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn know what I was doing in New York...');
 console.log(test);
 
 module.exports = repeatedWord;
