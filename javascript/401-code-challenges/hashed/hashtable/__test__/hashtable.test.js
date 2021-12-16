@@ -4,38 +4,30 @@
 const HashTable = require('../hashtable');
 
 describe('HashTable Works Super Fine', () => {
-  let hashTable;
-  beforeEach(() => {
-    hashTable = new HashTable(1024);
-    hashTable.set('one', '1');
+
+  it('Adding a key/value to your hashtable results in the value being in the data structure ', () => {
+    let hashtable = new HashTable(1024);
+    let expected = 'essam';
+    hashtable.add('name', 'essam');
+
+    expect(hashtable.contain('name')).toBe(true);
+    expect(hashtable.get('name')).toEqual('essam');
   });
 
-  test(' handles collision', () => {
-    hashTable.set('melon', 'water');
-    hashTable.set('lemon', 'not-water');
-    const index = hashTable.hash('melon');
-    expect(hashTable.table[index].root.value).toEqual({'melon': 'water'});
-    expect(hashTable.table[index].root.next.value).toEqual({'lemon': 'not-water'});
+  it('Retrieving based on a key returns the value stored', () => {
+    let hashtable = new HashTable(1024);
+    let expected = 'essam';
+    hashtable.add('name', 'essam');
+    expect(hashtable.contain('name')).toBe(true);
+    expect(hashtable.get('name')).toEqual(expected);
   });
 
-
-  test(' returns values of keys in case of collision', () => {
-    hashTable.set('melon', 'water');
-    hashTable.set('lemon', 'not-water');
-
-    expect(hashTable.get('melon')).toEqual('water');
-    expect(hashTable.get('lemon')).toEqual('not-water');
-  });
-
-
-  test(' returns true if keys exist in case of collision', () => {
-    hashTable.set('melon', 'water');
-    hashTable.set('lemon', 'not-water');
-    hashTable.set('molen', 'not-a-word');
-
-    expect(hashTable.includes('melon')).toEqual(true);
-    expect(hashTable.includes('lemon')).toEqual(true);
-    expect(hashTable.includes('molen')).toEqual(true);
+  it('Successfully hash a key to an in-range value',()=>{
+    let hashtable = new HashTable(8);
+    let min=1;
+    let max=10;
+    let key='essam';
+    expect(hashtable.hash(key)).toBeGreaterThanOrEqual(min);
+    expect(hashtable.hash(key)).toBeLessThanOrEqual(max);
   });
 });
-
