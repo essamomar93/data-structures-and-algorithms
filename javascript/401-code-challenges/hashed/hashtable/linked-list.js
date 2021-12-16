@@ -3,45 +3,50 @@ const Node = require('./Node');
 
 class LinkedList {
   constructor() {
-    this.root = null;
-    this.length = 0;
+    this.head = null;
   }
 
-  add(value) {
+  insert(value) {
     const node = new Node(value);
-    if (!this.root) {
-      this.root = node;
-      this.length++;
-    } else {
-      let current = this.root;
-      while (current.next) {
-        current = current.next;
-      }
-      current.next = node;
-      this.length++;
+    if (this.head) {
+      node.next = this.head;
     }
-  }
-
-  getValue(value) {
-    let current = this.root;
-    for (let i = 0; i < this.length; i++) {
-      if (current.value[value]) {
-        return current.value[value];
-      }
-      current = current.next;
-    }
-    return null;
+    this.head = node;
   }
 
   includes(value) {
-    let current = this.root;
-    for (let i = 0; i < this.length; i++) {
-      if (current.value[value]) {
-        return true;
+    let result = false;
+    let nodes = this.head;
+    while (nodes) {
+      if (nodes.value === value) {
+        return (result = true);
       }
-      current = current.next;
+      nodes = nodes.next;
     }
-    return false;
+    return result;
+  }
+  append(value) {
+    let newNode = new Node(value);
+    if (!this.head) {
+      this.head = newNode;
+    }
+    else {
+      let currentN = this.head;
+      while (currentN.next) {
+        currentN = currentN.next;
+      }
+      currentN.next = newNode;
+    }
+  }
+  toString() {
+    let string = "";
+    let temNode = this.head;
+    while (temNode) {
+      string += `{ ${temNode.value} } -> `;
+      temNode = temNode.next;
+    }
+    string += `NULL`;
+    return string;
   }
 }
 

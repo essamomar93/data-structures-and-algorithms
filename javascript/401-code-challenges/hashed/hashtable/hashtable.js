@@ -1,41 +1,49 @@
 'use strict';
 const LinkedList =require('./linked-list');
 
-class HashTable {
+class HashMap {
   constructor(size) {
     this.size = size;
-    this.table = new Array(size);
+    this.map = new Array(size);
   }
-  hash(key) {
-    const sum = key.split('').reduce((acc, v) => acc + v.charCodeAt(0), 0);
-    return (sum * 19) % this.size;
-  }
-  set(key, value) {
-    const hashed = this.hash(key);
+  add(key, value) {
+    const hash = this.hash(key);
     const entry = { [key]: value };
-    if (!this.table[hashed]) {
-      this.table[hashed] = new LinkedList();
+    if (!this.map[hash]) {
+      this.map[hash] = new LinkedList();
     }
-    this.table[hashed].add(entry);
+
+    this.map[hash].append(entry);
   }
   get(key) {
-    const hashed = this.hash(key);
-    if (!this.table[hashed]) return null;
-    return this.table[hashed].getValue(key);
+    let hash = this.hash(key);
+    if (!this.map[hash]) return null;
+    let i = this.map[hash];
+    let temp = i.head;
+    if (!temp) return 'null';
+    if (temp.value[key]) return temp.value[key];
+    while (temp.next) {
+      temp = temp.next;
+      if (temp.value[key]) return temp.value[key];
+    }
   }
-  includes(key) {
-    const hashed = this.hash(key);
-    if (!this.table[hashed]) return false;
-    return this.table[hashed].includes(key);
+  contain(key) {
+    let hash = this.hash(key);
+    if (!this.map[hash]) return false;
+    let i = this.map[hash];
+    let temp = i.head;
+    if (!temp) return false;
+    if (temp.value[key]) return true;
+
+    while (temp.next) {
+      temp = temp.next;
+      if (temp.value[key]) return true;
+    }
+  }
+  hash(key) {
+    const assciSum = key.split('').reduce((p, n) => p + n.charCodeAt(0), 0);
+    const withPrime = assciSum * 599;
+    return withPrime % this.size;
   }
 }
-
-const hashTable = new HashTable(1024);
-hashTable.set('one', '1');
-hashTable.set('two', '2');
-hashTable.set('three', '3');
-hashTable.set('lemon', 'not-water');
-hashTable.set('melon', 'water');
-
-
-module.exports = HashTable;
+module.exports = HashMap;
