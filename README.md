@@ -33,3 +33,5 @@ To run your tests
 | 9-| [trees](javascript/401-code-challenges/trees)|
 | 10-| [Sort](javascript/401-code-challenges/Sort)|
 | 11-| [hashed](javascript/401-code-challenges/hashed)|
+| 12-| [graph](javascript/401-code-challenges/graph)|
+
